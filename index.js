@@ -6,8 +6,8 @@ const app=express();
 require("dotenv").config();
 const port=process.env.PORT|| 3500;
 const cors=require('cors')
-app.use(cors())
 app.use(express.json());
+app.use(cors())
 app.use("/users",Router);
 app.use("/doctors",dRouter)
 app.listen(port,async(req,res)=>{

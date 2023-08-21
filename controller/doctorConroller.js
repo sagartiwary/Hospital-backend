@@ -23,7 +23,7 @@ const addDoctor = async (req, res) => {
 const getDoctor=async(req,res)=>{
     
     try {
-        let gotData=await DoctorModel.find();
+        let gotData=await DoctorModel.find(req.body);
         res.status(200).json({msg:"Sucessful",data:gotData})
     } catch (error) {
         res.status(400).json({msg:"Something wrong",err:error.message})
